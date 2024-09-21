@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    string sex;
+    char sex;
     double bw;
     double wrm;
     double wam;
