@@ -9,15 +9,16 @@ public:
     Array(){
         n=0;
     }
-    Array (Array & a){
+    Array (const Array & a){
         n = a.n;
-        for (int i = 0; i < a.n;i++ ){
+        for (int i = 0; i < a.n;i++){
             Storage[i] = a.Storage[i];
         }
     }
     bool addElement(int e){
         if (n<1024){
-            Storage[n-1]=e;
+            Storage[n]=e;
+            n++;
             return true;
         }
         else {
@@ -32,13 +33,12 @@ public:
         }
         return *this;
     }
-    friend ostream & operator << (ostream & ostr, Array & arr);
+    friend ostream & operator << (ostream & ostr,const Array & arr);
 };
-ostream & operator << (ostream & ostr, Array & arr){
-    cout << "[";
-    for (int i = 0; i < arr.n-1; i++){
-        cout << arr.Storage[i] << ", ";
+ostream & operator << (ostream & ostr,const Array & arr){
+    for (int i = 0; i < arr.n; i++){
+        ostr << arr.Storage[i] << " ";
     }
-    cout << arr.Storage[arr.n-1] << "]" << endl;
+    return ostr;
 }
 

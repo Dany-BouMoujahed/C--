@@ -1,11 +1,9 @@
-#include <iostream>
-#include <cmath>
 using namespace std;
 int binarySearch(const int A[], int low, int high, int e){
-    if (high - low < 0) {
+    int mid = (high+low)/2;
+    if (low > high) {
         return -1;
     }
-    int mid = floor((high+low)/2.0);
     if (A[mid] == e){
         return mid;
     }
@@ -15,9 +13,4 @@ int binarySearch(const int A[], int low, int high, int e){
     else {
         return binarySearch(A, (mid+1), high, e);
     }
-}
-int main(){
-    int A[] = {1,2,3,4,5,6,7,8,9};
-    int b = binarySearch(A, 0, sizeof(A)/sizeof(int), 9);
-    cout << b << endl;
 }
