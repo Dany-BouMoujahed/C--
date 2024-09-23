@@ -11,7 +11,7 @@ public:
     }
     Array (Array & a){
         n = a.n;
-        for (int i = 0; i < a.n;i++ ){
+        for (int i = 0; i < a.n;i++){
             Storage[i] = a.Storage[i];
         }
     }
@@ -35,10 +35,9 @@ public:
     friend ostream & operator << (ostream & ostr, Array & arr);
 };
 ostream & operator << (ostream & ostr, Array & arr){
-    cout << "[";
-    for (int i = 0; i < arr.n-1; i++){
-        cout << arr.Storage[i] << ", ";
+    for (int i = 0; i < arr.n; i++){
+        ostr << arr.Storage[i] << " ";
     }
-    cout << arr.Storage[arr.n-1] << "]" << endl;
+    return ostr;
 }
 
