@@ -9,7 +9,7 @@ public:
     Array(){
         n=0;
     }
-    Array (Array & a){
+    Array (const Array & a){
         n = a.n;
         for (int i = 0; i < a.n;i++){
             Storage[i] = a.Storage[i];
@@ -17,7 +17,8 @@ public:
     }
     bool addElement(int e){
         if (n<1024){
-            Storage[n-1]=e;
+            Storage[n]=e;
+            n++;
             return true;
         }
         else {
@@ -32,9 +33,9 @@ public:
         }
         return *this;
     }
-    friend ostream & operator << (ostream & ostr, Array & arr);
+    friend ostream & operator << (ostream & ostr,const Array & arr);
 };
-ostream & operator << (ostream & ostr, Array & arr){
+ostream & operator << (ostream & ostr,const Array & arr){
     for (int i = 0; i < arr.n; i++){
         ostr << arr.Storage[i] << " ";
     }

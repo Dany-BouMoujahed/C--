@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-enum country_t {country_error = 0, Lebanon = 1, Syria = 2, Palestine = 3, Jordan = 4, Iraq = 5, UK = 6};
-enum gender_t {gender_error = 0, Male = 1, Female = 2, Undefined = 3};
 class Person
 {
     private:
@@ -59,15 +57,9 @@ class Person
             break;
         }
     }
-    void print(ostream & ostr){
-        ostr << "name: " << name << endl
-        << "origin: " << originString(origin) << endl
-        << "gender: " << genderString(gender) << endl
-        << "Year Of Birth: " << birthyear << endl;
-    }
     public:
     Person(){
-        name = "EECCE 330";
+        name = "eece330";
         origin = Lebanon;
         gender = Undefined;
         birthyear = 1912;
@@ -114,6 +106,13 @@ class Person
     void set_year_of_birth(int b){
         birthyear = b;
     }
+    void print(ostream & ostr){
+        ostr << "name: " << name << endl
+        << "origin: " << originString(origin) << endl
+        << "gender: " << genderString(gender) << endl
+        << "Year Of Birth: " << birthyear << endl;
+    }
+    
     friend ostream & operator << (ostream & ostream, Person & p);
 };
     ostream & operator << (ostream & ostr, Person & p){

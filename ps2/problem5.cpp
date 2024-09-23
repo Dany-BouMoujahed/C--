@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 struct Fnumber{
     private:
@@ -45,27 +44,25 @@ void FnumbubbleSort(Fnumber arr[], int size) {
 }
 
 ostream & operator <<(ostream & ostr, Fnumber & Fnum){
-    if (Fnum.b = 0){
-        ostr << Fnum.a;
-    }
-
-    else{
-        if (Fnum.b > 0){
-            if(Fnum.b == 1){ostr << Fnum.a <<"+sqrt(2)";}
-            else{ostr << Fnum.a <<"+"<<Fnum.b<<"sqrt(2)";}
-        }
-
-        else{
-
-            if(Fnum.b!=-1){
-                ostr << Fnum.a << Fnum.b << "sqrt(2)";
+            if (Fnum.b!=0){
+            if (Fnum.b>0){
+                if(Fnum.b==1){
+                    ostr << Fnum.a <<"+sqrt(2)";}
+                else{    
+                    ostr << Fnum.a <<"+"<<Fnum.b<<"sqrt(2)";}
             }
-            else{    
-                ostr << Fnum.a << "-sqrt(2)";
-            }   
+            else{
+                if(Fnum.b==-1){
+                    ostr << Fnum.a <<"-sqrt(2)";
+                }
+                else{    
+                    ostr << Fnum.a<<Fnum.b<<"sqrt(2)";
+                }   
+            }
         }
-    } 
-    return ostr;   
+        else{
+            ostr << Fnum.a;} 
+        return ostr;
 }
 int main(){
     Fnumber A[1024];
