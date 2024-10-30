@@ -27,7 +27,7 @@ int main() {
   }
   while (k<i) {
     if (sequence1[k] != sequence2[k]) {
-      cout << "Sequences are not equal" << endl; 
+      cout << "Sequences are not equal" << endl;
       return 0;
     }
     k++;
